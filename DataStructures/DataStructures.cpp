@@ -7,7 +7,7 @@ using namespace std;
 
 bool testNode();
 bool testLinearNode();
-//bool ();
+bool testLinkedList();
 
 int main() {
     if (testNode())
@@ -19,6 +19,11 @@ int main() {
         cout << "Test linear node is passed" << endl;
     else
         cout << "Test linear node is not passed" << endl;
+
+    if (testLinkedList())
+        cout << "Test linked list is passed" << endl;
+    else
+        cout << "Test linked list is not passed" << endl;
 	return 0;
 }
 
@@ -38,5 +43,34 @@ bool testLinearNode() {
     result = result && ln2.getData() == 50 && ln2.getNext()->getData() == 20;
     ln2.getNext()->setNext(&ln2);
     result = result && ln2.getNext()->getNext() == &ln2;
+    return result;
+}
+
+bool testLinkedList() {
+    LinkedList<int> list = LinkedList<int>();
+    bool result = list.isEmpty();
+    list.addNode(new LinearNode<int>(10));
+    list.addNode(new LinearNode<int>(20));
+    list.addNode(new LinearNode<int>(30));
+    list.addNode(new LinearNode<int>(40));
+    list.addNode(new LinearNode<int>(50));
+    list.addNode(new LinearNode<int>(60));
+    result = result && list.toString().compare("10-20-30-40-50-60") == 0;
+    result = result && list.length() == 6;
+    result = result && list.removeNode(10) == nullptr;
+    result = result && list.removeFirstNode()->getData() == 10;
+    result = result && list.length() == 5;
+    result = result && list.removeLastNode()->getData() == 60;
+    result = result && list.length() == 4;
+
+    result = result && list.removeNode(2)->getData() == 40;
+    result = result && list.length() == 3;
+    result = result && list.toString().compare("20-30-50") == 0;
+
+    result = result && list.getNode(2)->getData() == 50;
+    result = result && list.updateNode(0, list.getNode(0)->getData() * 10)->getData() == 200;
+    result = result && list.updateNode(1, list.getNode(1)->getData() * 10)->getData() == 300;
+    result = result && list.updateNode(2, list.getNode(2)->getData() * 10)->getData() == 500;
+
     return result;
 }
