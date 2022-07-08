@@ -7,7 +7,7 @@ using namespace std;
 
 bool testNode();
 bool testLinearNode();
-bool ();
+//bool ();
 
 int main() {
     if (testNode())
