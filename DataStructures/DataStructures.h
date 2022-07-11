@@ -7,6 +7,7 @@
 
 // TODO: Fare riferimento qui alle intestazioni aggiuntive richieste dal programma.
 
-#include "Node.h"
-#include "LinearNode.h"
-#include "LinkedList.h"
+#include "headers/Node.h"
+#include "headers/LinkedList/LinearNode.h"
+#include "headers/LinkedList/LinkedList.h"
+#include "headers/LinkedList/DoubleLinkedList.h"
