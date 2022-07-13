@@ -137,7 +137,6 @@ namespace LinkedList {
 		if (back == nullptr) {
 			head = tmp->getNext();
 		} else {
-			std::cout << back;
 			back->setNext(tmp->getNext());
 		}
 		delete tmp;

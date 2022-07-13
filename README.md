@@ -21,3 +21,5 @@ These are function:
 - void delete_element(K): remove first occurence of key equals to K
 - void modify(K, V): update value of the node with key equals to K
 - string toString(): return a rappresentation of list
+
+## Binary Tree

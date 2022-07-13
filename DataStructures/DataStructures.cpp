@@ -64,17 +64,6 @@ bool testLinkedList() {
     list->insert(new LinkedList::LinearNode<int, int>(4, 50));
     list->insert(new LinkedList::LinearNode<int, int>(5, 60));
     result = result && list->toString().compare("10-10-20-30-40-50-60") == 0;
-    /*result = result && list->length() == 6;
-    result = result && list->removeNode(10) == nullptr;
-    result = result && list->removeFirstNode()->getData() == 10;
-    result = result && list->length() == 5;
-    result = result && list->removeLastNode()->getData() == 60;
-    result = result && list->length() == 4;
-
-    result = result && list.removeNode(2)->getData() == 40;
-    result = result && list.length() == 3;
-    result = result && list.toString().compare("20-30-50") == 0;
-    */
     result = result && list->search(2)->getData() == 30;
     list->modify(0, list->search(0)->getData() * 10);
     result = result && list->search(0)->getData() == 100;
@@ -104,17 +93,6 @@ bool testDoubleLinkedList() {
     list->insert(new LinkedList::LinearNode<int, int>(4, 50));
     list->insert(new LinkedList::LinearNode<int, int>(5, 60));
     result = result && list->toString().compare("10-10-20-30-40-50-60") == 0;
-    /*result = result && list->length() == 6;
-    result = result && list->removeNode(10) == nullptr;
-    result = result && list->removeFirstNode()->getData() == 10;
-    result = result && list->length() == 5;
-    result = result && list->removeLastNode()->getData() == 60;
-    result = result && list->length() == 4;
-
-    result = result && list.removeNode(2)->getData() == 40;
-    result = result && list.length() == 3;
-    result = result && list.toString().compare("20-30-50") == 0;
-    */
 
     result = result && list->search(2)->getData() == 30;
     list->modify(0, list->search(0)->getData() * 10);

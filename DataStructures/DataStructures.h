@@ -11,3 +11,5 @@
 #include "headers/LinkedList/LinearNode.h"
 #include "headers/LinkedList/LinkedList.h"
 #include "headers/LinkedList/DoubleLinkedList.h"
+#include "headers/Tree/TreeNode.h"
+#include "headers/Tree/BinaryTree.h"
