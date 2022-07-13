@@ -98,7 +98,7 @@ namespace LinkedList {
 			return tmp;
 		}
 		bool found = false;
-		while (tmp->getNext() != nullptr && !found) {
+		while (tmp != nullptr && !found) {
 			if (tmp->getKey() == key) {
 				found = true;
 			}
@@ -107,11 +107,11 @@ namespace LinkedList {
 			}
 		}
 
-		if (!found) {
-			return nullptr;
+		if (found) {
+			return tmp;
 		}
 
-		return tmp;
+		return nullptr;
 
 	}
 
@@ -124,28 +124,24 @@ namespace LinkedList {
 			return;
 		}
 
-		bool found = false;
-		while (tmp->getNext() != nullptr && !found) {
-			if (tmp->getKey() == key) {
-				found = true;
-			}
-			else {
-				back = tmp;
-				tmp = tmp->getNext();
-			}
+		while (tmp != nullptr && tmp->getKey() != key) {
+			back = tmp;
+			tmp = tmp->getNext();
 		}
 
-		if (!found) {
+		if (tmp == nullptr) {
 			return;
 		}
+
 
 		if (back == nullptr) {
 			head = tmp->getNext();
 		} else {
+			std::cout << back;
 			back->setNext(tmp->getNext());
 		}
 		delete tmp;
-	}
+	}	
 
 	template<typename K, typename V>
 	void LinkedList<K, V>::modify(K key, V data) {

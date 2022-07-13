@@ -42,13 +42,12 @@ namespace LinkedList {
 		if (found == nullptr) {
 			return;
 		}
-		if (found->getPrev() != nullptr) {
-			found->getPrev()->setNext(found->getNext());
-		}
-		if (found->getNext() != nullptr) {
+		if (found->getNext() == nullptr) {
+			tail = found->getPrev();
+		} else {
 			found->getNext()->setPrev(found->getPrev());
 		}
-		delete found;
+		LinkedList<K, V>::delete_element(key);
 	}
 }
 

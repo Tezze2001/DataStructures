@@ -87,7 +87,7 @@ bool testLinkedList() {
     list->delete_element(0);
     result = result && list->toString().compare("10-200-300-50-60") == 0;
     list->delete_element(5);
-    result = result && list->toString().compare("10-200-300-50-60") == 0;
+    result = result && list->toString().compare("10-200-300-50") == 0;
 
     return result;
 }
@@ -128,7 +128,7 @@ bool testDoubleLinkedList() {
     list->delete_element(0);
     result = result && list->toString().compare("10-200-300-50-60") == 0;
     list->delete_element(5);
-    result = result && list->toString().compare("10-200-300-50-60") == 0;
+    result = result && list->toString().compare("10-200-300-50") == 0;
 
     return result;
 }
